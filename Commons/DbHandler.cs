@@ -5,8 +5,10 @@ using System.IO;
 
 namespace Commons
 {
-    public class CsvParser
+    public class DbHandler
     {
-
+        // Functionality
+        // Reads CSV
+        // Writes CSV
     }
 }

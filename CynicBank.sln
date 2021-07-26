@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CynicBank", "CynicBank\CynicBank.csproj", "{3292B1EA-27C7-4086-B7CF-997D857CE862}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{4B2734FE-F4BF-42B3-8AB9-5BDDB73B6FD6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons", "Commons\Commons.csproj", "{F6F45583-D11C-428A-9DEE-D84F47847E89}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3292B1EA-27C7-4086-B7CF-997D857CE862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3292B1EA-27C7-4086-B7CF-997D857CE862}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3292B1EA-27C7-4086-B7CF-997D857CE862}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3292B1EA-27C7-4086-B7CF-997D857CE862}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4B2734FE-F4BF-42B3-8AB9-5BDDB73B6FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4B2734FE-F4BF-42B3-8AB9-5BDDB73B6FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B2734FE-F4BF-42B3-8AB9-5BDDB73B6FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
