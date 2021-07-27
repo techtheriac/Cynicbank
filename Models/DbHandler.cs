@@ -12,6 +12,7 @@ namespace Models
         private static string transactionPath { get; set; } = @"C:\Users\hp\source\repos\CynicBank\db\transactions.csv";
 
 
+
         public static void AddTransaction(Transaction transaction)
         {
             using(var writer = new StreamWriter(transactionPath))
