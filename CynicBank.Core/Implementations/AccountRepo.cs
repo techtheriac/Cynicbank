@@ -32,5 +32,10 @@ namespace CynicBank.Core.Implementations
         {
             return false;
         }
+
+        List<Account> IDbHandler<Account>.ReadFile(string filePath)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

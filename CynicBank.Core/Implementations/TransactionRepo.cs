@@ -52,5 +52,10 @@ namespace CynicBank.Core.Implementations
         {
             throw new NotImplementedException();
         }
+
+        List<Transaction> IDbHandler<Transaction>.ReadFile(string filePath)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

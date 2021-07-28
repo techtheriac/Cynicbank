@@ -34,12 +34,13 @@ namespace CynicBanky
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.loginSignupBtn = new System.Windows.Forms.Button();
+            this.loginEmail = new System.Windows.Forms.TextBox();
+            this.loginPassword = new System.Windows.Forms.TextBox();
+            this.emailValidity = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -56,11 +57,12 @@ namespace CynicBanky
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.emailValidity);
+            this.splitContainer1.Panel1.Controls.Add(this.loginPassword);
+            this.splitContainer1.Panel1.Controls.Add(this.loginEmail);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.loginBtn);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             // 
@@ -103,21 +105,6 @@ namespace CynicBanky
             this.label2.TabIndex = 3;
             this.label2.Text = "Email";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(74, 315);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 25);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(74, 198);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 25);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // loginBtn
             // 
             this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(198)))));
@@ -130,6 +117,7 @@ namespace CynicBanky
             this.loginBtn.TabIndex = 1;
             this.loginBtn.Text = "Log In";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // label1
             // 
@@ -168,6 +156,33 @@ namespace CynicBanky
             this.loginSignupBtn.UseVisualStyleBackColor = false;
             this.loginSignupBtn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // loginEmail
+            // 
+            this.loginEmail.Location = new System.Drawing.Point(74, 202);
+            this.loginEmail.Name = "loginEmail";
+            this.loginEmail.Size = new System.Drawing.Size(251, 25);
+            this.loginEmail.TabIndex = 5;
+            this.loginEmail.TextChanged += new System.EventHandler(this.loginEmail_TextChanged);
+            // 
+            // loginPassword
+            // 
+            this.loginPassword.Location = new System.Drawing.Point(74, 320);
+            this.loginPassword.Name = "loginPassword";
+            this.loginPassword.Size = new System.Drawing.Size(251, 25);
+            this.loginPassword.TabIndex = 6;
+            this.loginPassword.TextChanged += new System.EventHandler(this.loginPassword_TextChanged);
+            // 
+            // emailValidity
+            // 
+            this.emailValidity.AutoSize = true;
+            this.emailValidity.ForeColor = System.Drawing.Color.Red;
+            this.emailValidity.Location = new System.Drawing.Point(181, 162);
+            this.emailValidity.Name = "emailValidity";
+            this.emailValidity.Size = new System.Drawing.Size(144, 18);
+            this.emailValidity.TabIndex = 7;
+            this.emailValidity.Text = "Invalid email format";
+            this.emailValidity.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -197,10 +212,11 @@ namespace CynicBanky
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button loginSignupBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox loginPassword;
+        private System.Windows.Forms.TextBox loginEmail;
+        private System.Windows.Forms.Label emailValidity;
     }
 }
