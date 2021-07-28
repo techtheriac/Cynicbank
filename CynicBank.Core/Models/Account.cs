@@ -5,6 +5,9 @@ using Commons;
 
 namespace CynicBank.Core.Models
 {
+    /// <summary>
+    /// Models Bank Account Details
+    /// </summary>
     public class Account
     {
         

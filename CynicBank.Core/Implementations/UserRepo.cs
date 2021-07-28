@@ -54,6 +54,12 @@ namespace CynicBank.Core.Implementations
             }
         }
 
+        /// <summary>
+        /// Saves new User to DB
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
         public bool WriteToFile(User model, string filePath)
         {
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
@@ -66,7 +72,6 @@ namespace CynicBank.Core.Implementations
             using (var writer = new StreamWriter(stream))
             using (var csv = new CsvWriter(writer, config))
             {
-                //csv.WriteHeader<User>();
                 csv.NextRecord();
                 csv.WriteRecord(model);
 

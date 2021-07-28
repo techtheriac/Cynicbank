@@ -6,6 +6,9 @@ namespace CynicBank.Core.Models
 {
     public class Transaction
     {
+        /// <summary>
+        /// Models Bank transaction details
+        /// </summary>
         public string Id { get; set; }
         public DateTimeOffset Date { get; private set; } = DateTimeOffset.Now;
 

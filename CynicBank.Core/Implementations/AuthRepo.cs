@@ -11,6 +11,9 @@ using Commons;
 
 namespace CynicBank.Core.Implementations
 {
+    /// <summary>
+    /// Handles User Authentication
+    /// </summary>
     public class AuthRepo : IAuthRepo, IFileReader<User>
     {
         private string userPath { get; set; }
@@ -36,7 +39,12 @@ namespace CynicBank.Core.Implementations
 
         public bool Logout(string email)
         {
-            throw new NotImplementedException();
+            if(Commons.Session.LoggedInUser != null)
+            {
+                Commons.Session.LoggedInUser = null;
+            }
+
+            return true;
         }
 
         public List<User> ReadFile(string filePath)
