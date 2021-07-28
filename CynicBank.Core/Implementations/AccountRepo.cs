@@ -9,7 +9,7 @@ namespace CynicBank.Core.Implementations
     public class AccountRepo : IAccountRepo, IDbHandler<Account>
     {
         private static string AccountsPath { get; set; }
-          = @"C:\Users\hp\source\repos\CynicBank\db\account.csv";
+          = @"C:\Users\hp\source\repos\CynicBank\db\accounts.csv";
 
         public string CreateCurrentAccount(Account accountModel, User userModel)
         {

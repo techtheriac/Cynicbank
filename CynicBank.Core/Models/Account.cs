@@ -7,8 +7,7 @@ namespace CynicBank.Core.Models
 {
     public class Account
     {
-        public string Id { get; set; }
-
+        
         public string CustomerId { get; set; }
 
         public AccountType AccountType { get; set; }
