@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models
+namespace CynicBank.Core.Models
 {
     public enum AccountType
     {

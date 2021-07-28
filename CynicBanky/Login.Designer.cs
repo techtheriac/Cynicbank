@@ -39,7 +39,7 @@ namespace CynicBanky
             this.loginBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginSignupBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,7 +68,7 @@ namespace CynicBanky
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(198)))));
             this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.loginSignupBtn);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1093, 538);
             this.splitContainer1.SplitterDistance = 781;
@@ -116,6 +116,7 @@ namespace CynicBanky
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(251, 25);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // loginBtn
             // 
@@ -153,18 +154,19 @@ namespace CynicBanky
             this.label4.TabIndex = 0;
             this.label4.Text = "Don\'t have an account yet?";
             // 
-            // button1
+            // loginSignupBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(198)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(19, 180);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(141, 57);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Sign Up";
-            this.button1.UseVisualStyleBackColor = false;
+            this.loginSignupBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(198)))));
+            this.loginSignupBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginSignupBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.loginSignupBtn.Location = new System.Drawing.Point(19, 180);
+            this.loginSignupBtn.Name = "loginSignupBtn";
+            this.loginSignupBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.loginSignupBtn.Size = new System.Drawing.Size(141, 57);
+            this.loginSignupBtn.TabIndex = 1;
+            this.loginSignupBtn.Text = "Sign Up";
+            this.loginSignupBtn.UseVisualStyleBackColor = false;
+            this.loginSignupBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
@@ -198,7 +200,7 @@ namespace CynicBanky
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginSignupBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

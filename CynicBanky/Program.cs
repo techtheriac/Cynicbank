@@ -19,8 +19,7 @@ namespace CynicBanky
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DbHandler.AddTransaction(new Transaction(200, "food", TransactionType.Debit));
-            Application.Run(new Login());
+            Application.Run(new SignUp());
 
         }
     }

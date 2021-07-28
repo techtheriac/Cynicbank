@@ -29,35 +29,20 @@ namespace CynicBanky
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Avenir LT Std 65 Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(51, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(357, 51);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome Jezreel";
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
     }
 }
