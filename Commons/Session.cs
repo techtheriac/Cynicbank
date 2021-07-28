@@ -10,5 +10,6 @@ namespace Commons
     public static class Session
     {
         public static object LoggedInUser;
+        public static string UserName;
     }
 }

@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Commons;
+using CynicBank.Core.Models;
 
 namespace CynicBanky
 {
@@ -13,6 +15,14 @@ namespace CynicBanky
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            if(Session.LoggedInUser != null)
+            {
+                username.Text = Session.UserName;
+            }
         }
     }
 }

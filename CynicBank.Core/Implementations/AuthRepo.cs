@@ -29,6 +29,7 @@ namespace CynicBank.Core.Implementations
             if(matchedUser != null)
             {
                 Session.LoggedInUser = matchedUser;
+                Session.UserName = matchedUser.FirstName;
                 return true;
             } 
             else
