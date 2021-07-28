@@ -13,29 +13,25 @@ namespace CynicBank.Core.Implementations
 {
     public class AuthRepo : IAuthRepo, IFileReader<User>
     {
-        private static string userPath { get; set; }
+        private string userPath { get; set; }
             = @"C:\Users\hp\source\repos\CynicBank\db\users.csv";
 
         public bool Login(string email, string password)
         {
-            bool isLoggedIn = false;
 
             var userList = ReadFile(userPath);
-           
 
-            foreach (var item in userList)
+            var matchedUser = userList.FirstOrDefault(a => a.Password == password && a.Email == email);
+
+            if(matchedUser != null)
             {
-                if(item.Email == email && item.Password == password)
-                {
-                    Session.LoggedInUser = item;
-                    isLoggedIn = true;
-                } else
-                {
-                    isLoggedIn = false;
-                }
+                Session.LoggedInUser = matchedUser;
+                return true;
+            } 
+            else
+            {
+                return false;
             }
-
-            return isLoggedIn;
         }
 
         public bool Logout(string email)

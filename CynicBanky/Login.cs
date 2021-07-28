@@ -87,7 +87,10 @@ namespace CynicBanky
                 menu.Show();
             } else
             {
-                MessageBox.Show("Invalid Credentials");
+                //MessageBox.Show("Invalid Credentials");
+
+                MessageBox.Show($"{_email} {_password}");
+
             }
         }
     }
