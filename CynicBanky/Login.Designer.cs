@@ -31,6 +31,9 @@ namespace CynicBanky
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.emailValidity = new System.Windows.Forms.Label();
+            this.loginPassword = new System.Windows.Forms.TextBox();
+            this.loginEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,9 +41,6 @@ namespace CynicBanky
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.loginSignupBtn = new System.Windows.Forms.Button();
-            this.loginEmail = new System.Windows.Forms.TextBox();
-            this.loginPassword = new System.Windows.Forms.TextBox();
-            this.emailValidity = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,6 +75,34 @@ namespace CynicBanky
             this.splitContainer1.Size = new System.Drawing.Size(1093, 538);
             this.splitContainer1.SplitterDistance = 781;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // emailValidity
+            // 
+            this.emailValidity.AutoSize = true;
+            this.emailValidity.ForeColor = System.Drawing.Color.Red;
+            this.emailValidity.Location = new System.Drawing.Point(181, 162);
+            this.emailValidity.Name = "emailValidity";
+            this.emailValidity.Size = new System.Drawing.Size(144, 18);
+            this.emailValidity.TabIndex = 7;
+            this.emailValidity.Text = "Invalid email format";
+            this.emailValidity.Visible = false;
+            // 
+            // loginPassword
+            // 
+            this.loginPassword.Location = new System.Drawing.Point(74, 320);
+            this.loginPassword.Name = "loginPassword";
+            this.loginPassword.PasswordChar = '*';
+            this.loginPassword.Size = new System.Drawing.Size(251, 25);
+            this.loginPassword.TabIndex = 6;
+            this.loginPassword.TextChanged += new System.EventHandler(this.loginPassword_TextChanged);
+            // 
+            // loginEmail
+            // 
+            this.loginEmail.Location = new System.Drawing.Point(74, 202);
+            this.loginEmail.Name = "loginEmail";
+            this.loginEmail.Size = new System.Drawing.Size(251, 25);
+            this.loginEmail.TabIndex = 5;
+            this.loginEmail.TextChanged += new System.EventHandler(this.loginEmail_TextChanged);
             // 
             // pictureBox1
             // 
@@ -155,33 +183,6 @@ namespace CynicBanky
             this.loginSignupBtn.Text = "Sign Up";
             this.loginSignupBtn.UseVisualStyleBackColor = false;
             this.loginSignupBtn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // loginEmail
-            // 
-            this.loginEmail.Location = new System.Drawing.Point(74, 202);
-            this.loginEmail.Name = "loginEmail";
-            this.loginEmail.Size = new System.Drawing.Size(251, 25);
-            this.loginEmail.TabIndex = 5;
-            this.loginEmail.TextChanged += new System.EventHandler(this.loginEmail_TextChanged);
-            // 
-            // loginPassword
-            // 
-            this.loginPassword.Location = new System.Drawing.Point(74, 320);
-            this.loginPassword.Name = "loginPassword";
-            this.loginPassword.Size = new System.Drawing.Size(251, 25);
-            this.loginPassword.TabIndex = 6;
-            this.loginPassword.TextChanged += new System.EventHandler(this.loginPassword_TextChanged);
-            // 
-            // emailValidity
-            // 
-            this.emailValidity.AutoSize = true;
-            this.emailValidity.ForeColor = System.Drawing.Color.Red;
-            this.emailValidity.Location = new System.Drawing.Point(181, 162);
-            this.emailValidity.Name = "emailValidity";
-            this.emailValidity.Size = new System.Drawing.Size(144, 18);
-            this.emailValidity.TabIndex = 7;
-            this.emailValidity.Text = "Invalid email format";
-            this.emailValidity.Visible = false;
             // 
             // Login
             // 
