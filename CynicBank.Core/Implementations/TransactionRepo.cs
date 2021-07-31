@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CynicBank.Core.Interfaces;
-using CynicBank.Core.Models;
+using Models;
 
 namespace CynicBank.Core.Implementations
 {

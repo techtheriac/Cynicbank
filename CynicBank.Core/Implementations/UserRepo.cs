@@ -3,40 +3,39 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using CynicBank.Core.Interfaces;
-using CynicBank.Core.Models;
 using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
 using System.Linq;
+using Models;
 
 namespace CynicBank.Core.Implementations
 {
-    public class UserRepo : IUserRepo, IDbHandler<User>
+    public class UserRepo : IUserRepo
     {
-        private static string userPath { get; set; }
-            = @"C:\Users\hp\source\repos\CynicBank\db\users.csv";
+        private readonly DbHandler<User> _dbHandler;
+        private static string UserPath = @"C:\Users\hp\source\repos\CynicBank\db\users.csv";
+
+        public UserRepo(DbHandler<User> dbHandler)
+        {
+            _dbHandler = new DbHandler<User>();
+        }
 
         public bool AddNewUser(User userModel)
         {
-            WriteToFile(userModel, userPath);
+            _dbHandler.WriteToFile(userModel, UserPath);
 
             return true;
         }
 
         public bool CheckIfExits(string email)
         {
-            var userList = ReadFile(userPath);
-            bool doesExist = false;
+            var userList = ReadFile(UserPath);
+            var doesExist = false;
 
             foreach (var item in userList)
             {
-                if(item.Email == email)
-                {
-                    doesExist = true;
-                } else
-                {
-                    doesExist = false;
-                }
+                doesExist = item.Email == email;
             }
 
             return doesExist;
@@ -44,39 +43,8 @@ namespace CynicBank.Core.Implementations
 
         public List<User> ReadFile(string filePath)
         {
-            using (var streamReader = new StreamReader(filePath))
-            {
-                using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
-                {
-                    var records = csvReader.GetRecords<User>().ToList();
-                    return records;
-                }
-            }
+            return _dbHandler.ReadFile(filePath);
         }
 
-        /// <summary>
-        /// Saves new User to DB
-        /// </summary>
-        /// <param name="model"></param>
-        /// <param name="filePath"></param>
-        /// <returns></returns>
-        public bool WriteToFile(User model, string filePath)
-        {
-            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
-            {
-                // Don't write the header again.
-                HasHeaderRecord = false
-            };
-
-            using (var stream = File.Open(filePath, FileMode.Append))
-            using (var writer = new StreamWriter(stream))
-            using (var csv = new CsvWriter(writer, config))
-            {
-                csv.NextRecord();
-                csv.WriteRecord(model);
-
-                return true;
-            }
-        }
     }
 }

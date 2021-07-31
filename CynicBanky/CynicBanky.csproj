@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Commons\Commons.csproj" />
     <ProjectReference Include="..\CynicBank.Core\CynicBank.Core.csproj" />
+    <ProjectReference Include="..\CynicBank.Models\Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,8 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Commons;
-using CynicBank.Core.Models;
+using CynicBank.Core.Implementations;
 
 namespace CynicBanky
 {

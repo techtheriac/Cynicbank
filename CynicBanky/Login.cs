@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using CynicBank.Core.Implementations;
+using System;
 using System.Windows.Forms;
-using Commons;
-using CynicBank.Core.Models;
-using CynicBank.Core.Implementations;
+using Models;
 
 namespace CynicBanky
 {
@@ -77,7 +71,7 @@ namespace CynicBanky
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            var auth = new AuthRepo();
+            var auth = new AuthRepo(new DbHandler<User>());
             bool status = auth.Login(_email, _password);
 
             if(status == true)
@@ -92,6 +86,11 @@ namespace CynicBanky
                 MessageBox.Show($"{_email} {_password}");
 
             }
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

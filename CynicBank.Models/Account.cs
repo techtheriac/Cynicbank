@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Commons;
 
-namespace CynicBank.Core.Models
+namespace Models
 {
     /// <summary>
     /// Models Bank Account Details
@@ -11,7 +10,7 @@ namespace CynicBank.Core.Models
     public class Account
     {
         
-        public string CustomerId { get; set; }
+        public string Id { get; set; }
 
         public AccountType AccountType { get; set; }
 
@@ -24,10 +23,10 @@ namespace CynicBank.Core.Models
         public List<Transaction> TransactionLog { get; set; }
 
 
-        public Account()
-        {
-            AccountNumber = Helpers.GenerateAccountNumber();
-            TransactionLog = new List<Transaction>();
-        }
+        //public Account()
+        //{
+        //    AccountNumber = Helpers.GenerateAccountNumber();
+        //    TransactionLog = new List<Transaction>();
+        //}
     }
 }

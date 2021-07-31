@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Commons;
-using CynicBank.Core.Models;
 using CynicBank.Core.Implementations;
 using CynicBank.Core.Interfaces;
+using Models;
 
 namespace CynicBanky
 {
@@ -137,9 +137,9 @@ namespace CynicBanky
                 MessageBox.Show("Error");
             } else
             {
-                var UserAction = new UserRepo();
+                var userAction = new UserRepo(new DbHandler<User>());
                 var userModel = new User { FirstName = _firstName, LastName = _lastName, Email = _emial, Password = _password };
-                bool status = UserAction.AddNewUser(userModel);
+                bool status = userAction.AddNewUser(userModel);
 
                 if(status == true)
                 {

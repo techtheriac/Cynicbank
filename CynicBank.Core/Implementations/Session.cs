@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Models;
 
-namespace Commons
+namespace CynicBank.Core.Implementations
 {
-    /// <summary>
-    /// Holds Session Data
-    /// </summary>
     public static class Session
     {
-        public static object LoggedInUser;
+        public static User LoggedInUser = null;
         public static string UserName;
     }
 }

@@ -8,10 +8,10 @@ namespace Commons
     {
         public static string GenerateAccountNumber()
         {
-            StringBuilder accountNumber = new StringBuilder();
+            var accountNumber = new StringBuilder();
             Random seeder = new Random();
 
-            for (int i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
             {
                 accountNumber.Append(seeder.Next(10));
             }

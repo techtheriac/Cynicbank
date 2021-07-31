@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CynicBank.Core.Models
+﻿namespace Models
 {
     public class User
     {
@@ -14,13 +10,7 @@ namespace CynicBank.Core.Models
         public string LastName { get; set; }
         public string Password { get; set; }
 
-        public string FullName
-        {
-            get
-            {
-                return $"{FirstName} {LastName}";
-            }
-        }
+        public string FullName => $"{FirstName} {LastName}";
 
         //public User(
         //    string firstName,

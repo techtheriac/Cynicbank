@@ -2,27 +2,33 @@
 using System.Collections.Generic;
 using System.Text;
 using CynicBank.Core.Interfaces;
-using CynicBank.Core.Models;
 using System.IO;
 using CsvHelper;
 using System.Globalization;
 using System.Linq;
-using Commons;
+using Models;
 
 namespace CynicBank.Core.Implementations
 {
     /// <summary>
     /// Handles User Authentication
     /// </summary>
-    public class AuthRepo : IAuthRepo, IFileReader<User>
+    public class AuthRepo : IAuthRepo
     {
-        private string userPath { get; set; }
+
+        private string UserPath { get; set; }
             = @"C:\Users\hp\source\repos\CynicBank\db\users.csv";
+
+        private readonly DbHandler<User> _dbHandler;
+        public AuthRepo(DbHandler<User> dbHandler)
+        {
+            _dbHandler = dbHandler;
+        }
 
         public bool Login(string email, string password)
         {
 
-            var userList = ReadFile(userPath);
+            var userList = ReadFile(UserPath);
 
             var matchedUser = userList.FirstOrDefault(a => a.Password == password && a.Email == email);
 
@@ -40,44 +46,14 @@ namespace CynicBank.Core.Implementations
 
         public bool Logout(string email)
         {
-            if(Commons.Session.LoggedInUser != null)
-            {
-                Commons.Session.LoggedInUser = null;
-            }
+            Session.LoggedInUser = null;
 
             return true;
         }
 
         public List<User> ReadFile(string filePath)
         {
-            using (var streamReader = new StreamReader(filePath))
-            {
-                using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
-                {
-                    var records = csvReader.GetRecords<User>().ToList();
-                    return records;
-                }
-            }
-        }
-
-        public bool CheckIfExits(string email)
-        {
-            var userList = ReadFile(userPath);
-            bool doesExist = false;
-
-            foreach (var item in userList)
-            {
-                if (item.Email == email)
-                {
-                    doesExist = true;
-                }
-                else
-                {
-                    doesExist = false;
-                }
-            }
-
-            return doesExist;
+            return _dbHandler.ReadFile(filePath);
         }
 
     }

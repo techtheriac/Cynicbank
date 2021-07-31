@@ -1,1 +1,5 @@
-Id,AccountName,AccountNumber,AccountBalance,AccountType
+Id,AccountType,AccountNumber,AccountName,AccountBalance
+
+janet@gmail.com,Savings,2270012762,Franklin Jezreel,9000,
+lime@gmail.com,Savings,9305469141,Obinna Killme,9000,
+janet@gmail.com,Current,2025853301,Franklin Jezreel,9000,
