@@ -64,7 +64,7 @@ namespace CynicBanky
 
             var status = transactionHandler.MakeDeposit(_depositAmount, _depositTo);
 
-            MessageBox.Show(status == true ? "Successful" : "Failed");
+            MessageBox.Show(status);
         }
     }
 }

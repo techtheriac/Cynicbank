@@ -23,35 +23,28 @@ namespace CynicBank.Core.Implementations
             _accountsHandler = accooutsHandler;
         }
 
-        public bool MakeDeposit(int amount, AccountType to)
+        public string MakeDeposit(int amount, AccountType to)
         {
             var accountId = Session.LoggedInUser.Email;
             var accountsList = _accountsHandler.ReadFile(AccountsPath);
-
-            //Check if such account exist first.
-            //If not return false
-            //Otherwise carryout transaction
 
             bool doesAccountExist =
                 accountsList.Exists(x => x.Id ==  accountId && x.AccountType == to);
 
             if (doesAccountExist == false)
             {
-                return false;
+                return "Account does not exist";
             }
             else
             {
                 foreach (var item in accountsList)
                 {
-                    if (item.Id == Session.LoggedInUser.Email && item.AccountType == to)
+                    if (item.Id == accountId && item.AccountType == to)
                     {
                         item.AccountBalance += amount;
                     }
                 }
             }
-
-            //Append new Transaction to List
-            //Update accounts File
 
             var generatedTransaction = new Transaction
             {
@@ -64,22 +57,74 @@ namespace CynicBank.Core.Implementations
             _accountsHandler.Update(accountsList, AccountsPath);
             _transactionHandler.WriteToFile(generatedTransaction, TransactionsPath);
 
-            return true;
+            return "Transaction Successful";
         }
 
-        public bool SendBetweenAccounts(AccountType from, AccountType to)
+        public string SendBetweenAccounts(AccountType from, AccountType to)
         {
             throw new NotImplementedException();
         }
 
-        public bool SendMoney(int amount, string to)
+
+        public string WithdrawMoney(int amount, AccountType from)
         {
-            throw new NotImplementedException();
+            string UiMessage = String.Empty;
+
+            // Determine Withdraw rule based on account type
+            Func<int, int, bool> NotAllowableAmount =
+                from == AccountType.Current ?
+                CurrentNotAllowableAmount :
+                SavingNotAllowableAmount;
+
+            
+            var accountId = Session.LoggedInUser.Email;
+            var accountsList = _accountsHandler.ReadFile(AccountsPath);
+
+            bool doesAccountExist =
+                accountsList.Exists(x => x.Id == accountId && x.AccountType == from);
+
+            if(doesAccountExist == false)
+            {
+                return "Account does not exist";
+            }
+            else
+            {
+                foreach (var item in accountsList)
+                {
+                   if(item.Id == accountId && item.AccountType == from)
+                    {
+                        if(NotAllowableAmount(amount, item.AccountBalance) == true)
+                        {
+                            UiMessage = "Insufficient funds";
+                        }
+                        else
+                        {
+                            item.AccountBalance -= amount;
+                            UiMessage = "Successful";
+                        }
+                    }
+                }
+            }
+
+            var generatedTransaction = new Transaction
+            {
+                Id = Session.LoggedInUser.Email,
+                Amount = amount,
+                Description = "Self",
+                TypeOfTransaction = TransactionType.Debit,
+            };
+
+            _accountsHandler.Update(accountsList, AccountsPath);
+            _transactionHandler.WriteToFile(generatedTransaction, TransactionsPath);
+
+            return UiMessage;
         }
 
-        public bool WithdrawMoney(int amount, AccountType from)
-        {
-            throw new NotImplementedException();
-        }
+        Func<int, int, bool> CurrentNotAllowableAmount = (amount, balance) =>
+            balance < amount;
+    
+
+        Func<int, int, bool> SavingNotAllowableAmount = (amount, balance) =>
+            balance <= 1000 && amount >= 1000;
     }
 }

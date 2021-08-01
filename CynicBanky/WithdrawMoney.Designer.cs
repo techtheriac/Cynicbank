@@ -30,9 +30,11 @@ namespace CynicBanky
         private void InitializeComponent()
         {
             this.withdrawFromLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.withdrawFrom = new System.Windows.Forms.ComboBox();
             this.withdrawAmountLabel = new System.Windows.Forms.Label();
             this.withdrawAmountInput = new System.Windows.Forms.TextBox();
+            this.amountValidity = new System.Windows.Forms.Label();
+            this.withdrawButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // withdrawFromLabel
@@ -44,21 +46,22 @@ namespace CynicBanky
             this.withdrawFromLabel.TabIndex = 0;
             this.withdrawFromLabel.Text = "From";
             // 
-            // comboBox1
+            // withdrawFrom
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.withdrawFrom.FormattingEnabled = true;
+            this.withdrawFrom.Items.AddRange(new object[] {
             "Current",
             "Savings"});
-            this.comboBox1.Location = new System.Drawing.Point(163, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 1;
+            this.withdrawFrom.Location = new System.Drawing.Point(163, 61);
+            this.withdrawFrom.Name = "withdrawFrom";
+            this.withdrawFrom.Size = new System.Drawing.Size(196, 28);
+            this.withdrawFrom.TabIndex = 1;
+            this.withdrawFrom.SelectedIndexChanged += new System.EventHandler(this.withdrawFrom_SelectedIndexChanged);
             // 
             // withdrawAmountLabel
             // 
             this.withdrawAmountLabel.AutoSize = true;
-            this.withdrawAmountLabel.Location = new System.Drawing.Point(56, 165);
+            this.withdrawAmountLabel.Location = new System.Drawing.Point(56, 189);
             this.withdrawAmountLabel.Name = "withdrawAmountLabel";
             this.withdrawAmountLabel.Size = new System.Drawing.Size(62, 20);
             this.withdrawAmountLabel.TabIndex = 0;
@@ -66,22 +69,47 @@ namespace CynicBanky
             // 
             // withdrawAmountInput
             // 
-            this.withdrawAmountInput.Location = new System.Drawing.Point(163, 158);
+            this.withdrawAmountInput.Location = new System.Drawing.Point(163, 182);
             this.withdrawAmountInput.Name = "withdrawAmountInput";
-            this.withdrawAmountInput.Size = new System.Drawing.Size(151, 27);
+            this.withdrawAmountInput.Size = new System.Drawing.Size(196, 27);
             this.withdrawAmountInput.TabIndex = 2;
+            this.withdrawAmountInput.TextChanged += new System.EventHandler(this.withdrawAmountInput_TextChanged);
+            // 
+            // amountValidity
+            // 
+            this.amountValidity.AutoSize = true;
+            this.amountValidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.amountValidity.Location = new System.Drawing.Point(249, 150);
+            this.amountValidity.Name = "amountValidity";
+            this.amountValidity.Size = new System.Drawing.Size(110, 20);
+            this.amountValidity.TabIndex = 3;
+            this.amountValidity.Text = "Invalid Amount";
+            this.amountValidity.Visible = false;
+            // 
+            // withdrawButton
+            // 
+            this.withdrawButton.Location = new System.Drawing.Point(264, 282);
+            this.withdrawButton.Name = "withdrawButton";
+            this.withdrawButton.Size = new System.Drawing.Size(94, 29);
+            this.withdrawButton.TabIndex = 4;
+            this.withdrawButton.Text = "Withdraw";
+            this.withdrawButton.UseVisualStyleBackColor = true;
+            this.withdrawButton.Click += new System.EventHandler(this.withdrawButton_Click);
             // 
             // WithdrawMoney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.withdrawButton);
+            this.Controls.Add(this.amountValidity);
             this.Controls.Add(this.withdrawAmountInput);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.withdrawFrom);
             this.Controls.Add(this.withdrawAmountLabel);
             this.Controls.Add(this.withdrawFromLabel);
             this.Name = "WithdrawMoney";
             this.Text = "WithdrawMoney";
+            this.Load += new System.EventHandler(this.WithdrawMoney_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,8 +118,10 @@ namespace CynicBanky
         #endregion
 
         private System.Windows.Forms.Label withdrawFromLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox withdrawFrom;
         private System.Windows.Forms.Label withdrawAmountLabel;
         private System.Windows.Forms.TextBox withdrawAmountInput;
+        private System.Windows.Forms.Label amountValidity;
+        private System.Windows.Forms.Button withdrawButton;
     }
 }

@@ -96,6 +96,7 @@ namespace CynicBanky
             this.amountValidity.Size = new System.Drawing.Size(110, 20);
             this.amountValidity.TabIndex = 5;
             this.amountValidity.Text = "Invalid Amount";
+            this.amountValidity.Visible = false;
             // 
             // DepositMoney
             // 
