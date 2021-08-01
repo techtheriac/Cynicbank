@@ -8,13 +8,9 @@ namespace CynicBank.Core.Interfaces
     public interface ITransactionRepo
     {
         // Logged in User is referenced for these operations
-        string MakeDeposit(Transaction transactionModel, User model);
-        string SendMoney(Transaction transactionModel, User model);
-        string SendBetweenAccounts(Transaction transactionModel, User model);
-        string WithdrawMoney(Transaction transactionModel, User model);
-        string GetAccountBalance(string accountId, User model);
-        string GetAccountDetails(string accountNumber);
-        string GetAccountStatement(string accountId);
-
+        bool MakeDeposit(int amount, AccountType to);
+        bool SendMoney(int amount, string to);
+        bool SendBetweenAccounts(AccountType from, AccountType to);
+        bool WithdrawMoney(int amount, AccountType from);
     }
 }

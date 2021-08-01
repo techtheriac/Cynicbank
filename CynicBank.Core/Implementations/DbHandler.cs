@@ -42,5 +42,16 @@ namespace CynicBank.Core.Implementations
                 }
             }
         }
+
+        public bool Update(List<T> collection, string filePath)
+        {
+            using (var writer = new StreamWriter(filePath))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(collection);
+            }
+
+            return true;
+        }
     }
 }

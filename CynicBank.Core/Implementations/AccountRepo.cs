@@ -15,7 +15,7 @@ namespace CynicBank.Core.Implementations
     public class AccountRepo : IAccountRepo
     {
         private readonly DbHandler<Account> _dbHandler;
-        private static string AccountsPath
+        private string AccountsPath
           = @"C:\Users\hp\source\repos\CynicBank\db\accounts.csv";
 
         public AccountRepo(DbHandler<Account> dbHandler)

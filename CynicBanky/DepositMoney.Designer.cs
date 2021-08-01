@@ -30,10 +30,11 @@ namespace CynicBanky
         private void InitializeComponent()
         {
             this.depositToLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.selectAccount = new System.Windows.Forms.ComboBox();
             this.depositAmountLabel = new System.Windows.Forms.Label();
             this.depositAmountInput = new System.Windows.Forms.TextBox();
             this.depositMoneyBtn = new System.Windows.Forms.Button();
+            this.amountValidity = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // depositToLabel
@@ -46,21 +47,22 @@ namespace CynicBanky
             this.depositToLabel.Text = "To";
             this.depositToLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // comboBox1
+            // selectAccount
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.selectAccount.FormattingEnabled = true;
+            this.selectAccount.Items.AddRange(new object[] {
             "Savings",
             "Current"});
-            this.comboBox1.Location = new System.Drawing.Point(174, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 1;
+            this.selectAccount.Location = new System.Drawing.Point(174, 75);
+            this.selectAccount.Name = "selectAccount";
+            this.selectAccount.Size = new System.Drawing.Size(235, 28);
+            this.selectAccount.TabIndex = 1;
+            this.selectAccount.SelectedIndexChanged += new System.EventHandler(this.selectAccount_SelectedIndexChanged);
             // 
             // depositAmountLabel
             // 
             this.depositAmountLabel.AutoSize = true;
-            this.depositAmountLabel.Location = new System.Drawing.Point(66, 144);
+            this.depositAmountLabel.Location = new System.Drawing.Point(66, 166);
             this.depositAmountLabel.Name = "depositAmountLabel";
             this.depositAmountLabel.Size = new System.Drawing.Size(62, 20);
             this.depositAmountLabel.TabIndex = 2;
@@ -69,29 +71,42 @@ namespace CynicBanky
             // 
             // depositAmountInput
             // 
-            this.depositAmountInput.Location = new System.Drawing.Point(174, 137);
+            this.depositAmountInput.Location = new System.Drawing.Point(174, 159);
             this.depositAmountInput.Name = "depositAmountInput";
-            this.depositAmountInput.Size = new System.Drawing.Size(151, 27);
+            this.depositAmountInput.Size = new System.Drawing.Size(235, 27);
             this.depositAmountInput.TabIndex = 3;
+            this.depositAmountInput.TextChanged += new System.EventHandler(this.depositAmountInput_TextChanged);
             // 
             // depositMoneyBtn
             // 
-            this.depositMoneyBtn.Location = new System.Drawing.Point(230, 233);
+            this.depositMoneyBtn.Location = new System.Drawing.Point(315, 235);
             this.depositMoneyBtn.Name = "depositMoneyBtn";
             this.depositMoneyBtn.Size = new System.Drawing.Size(94, 29);
             this.depositMoneyBtn.TabIndex = 4;
             this.depositMoneyBtn.Text = "Deposit";
             this.depositMoneyBtn.UseVisualStyleBackColor = true;
+            this.depositMoneyBtn.Click += new System.EventHandler(this.depositMoneyBtn_Click);
+            // 
+            // amountValidity
+            // 
+            this.amountValidity.AutoSize = true;
+            this.amountValidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.amountValidity.Location = new System.Drawing.Point(299, 126);
+            this.amountValidity.Name = "amountValidity";
+            this.amountValidity.Size = new System.Drawing.Size(110, 20);
+            this.amountValidity.TabIndex = 5;
+            this.amountValidity.Text = "Invalid Amount";
             // 
             // DepositMoney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.amountValidity);
             this.Controls.Add(this.depositMoneyBtn);
             this.Controls.Add(this.depositAmountInput);
             this.Controls.Add(this.depositAmountLabel);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.selectAccount);
             this.Controls.Add(this.depositToLabel);
             this.Name = "DepositMoney";
             this.Text = "DepositMoney";
@@ -105,9 +120,10 @@ namespace CynicBanky
         #endregion
 
         private System.Windows.Forms.Label depositToLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox selectAccount;
         private System.Windows.Forms.Label depositAmountLabel;
         private System.Windows.Forms.TextBox depositAmountInput;
         private System.Windows.Forms.Button depositMoneyBtn;
+        private System.Windows.Forms.Label amountValidity;
     }
 }

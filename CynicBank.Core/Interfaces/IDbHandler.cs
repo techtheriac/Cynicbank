@@ -8,5 +8,6 @@ namespace CynicBank.Core.Interfaces
     {
         bool WriteToFile(T model, string filePath);
         List<T> ReadFile(string filePath);
+        bool Update(List<T> updatedCollection, string filePath);
     }
 }

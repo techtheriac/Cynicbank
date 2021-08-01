@@ -18,18 +18,18 @@ namespace Models
 
         public TransactionType TypeOfTransaction { get; set; }
 
-        public Transaction(
-            string id,
-            int amount,
-            string description,
-            TransactionType typeOfTransaction
-            )
-        {
-            Id = id;
-            Amount = amount;
-            Description = description;
-            TypeOfTransaction = typeOfTransaction;
-        }
+        //public Transaction(
+        //    string id,
+        //    int amount,
+        //    string description,
+        //    TransactionType typeOfTransaction
+        //    )
+        //{
+        //    Id = id;
+        //    Amount = amount;
+        //    Description = description;
+        //    TypeOfTransaction = typeOfTransaction;
+        //}
 
     }
 }
