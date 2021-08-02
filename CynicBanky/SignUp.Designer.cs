@@ -30,6 +30,11 @@ namespace CynicBanky
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.choosePassword = new System.Windows.Forms.TextBox();
             this.confirmPassword = new System.Windows.Forms.TextBox();
             this.signupBtn = new System.Windows.Forms.Button();
@@ -47,11 +52,6 @@ namespace CynicBanky
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.firstNameLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,11 +100,71 @@ namespace CynicBanky
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("AvenirNext LT Pro Bold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(55, 252);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 51);
+            this.label3.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("AvenirNext LT Pro Bold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(55, 158);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 51);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "to";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("AvenirNext LT Pro Bold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(55, 83);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(213, 51);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Welcome";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("AvenirNext LT Pro Regular", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(78, 483);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 30);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Sign Up ->";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("AvenirNext LT Pro Bold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(55, 228);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(247, 51);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Cynic bank";
+            // 
             // choosePassword
             // 
             this.choosePassword.Location = new System.Drawing.Point(93, 416);
             this.choosePassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.choosePassword.Name = "choosePassword";
+            this.choosePassword.PasswordChar = '*';
             this.choosePassword.Size = new System.Drawing.Size(289, 26);
             this.choosePassword.TabIndex = 4;
             this.choosePassword.TextChanged += new System.EventHandler(this.choosePassword_TextChanged);
@@ -114,6 +174,7 @@ namespace CynicBanky
             this.confirmPassword.Location = new System.Drawing.Point(93, 502);
             this.confirmPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.confirmPassword.Name = "confirmPassword";
+            this.confirmPassword.PasswordChar = '*';
             this.confirmPassword.Size = new System.Drawing.Size(289, 26);
             this.confirmPassword.TabIndex = 3;
             this.confirmPassword.TextChanged += new System.EventHandler(this.confirmPassword_TextChanged);
@@ -278,65 +339,6 @@ namespace CynicBanky
             this.firstNameLabel.TabIndex = 0;
             this.firstNameLabel.Text = "First Name";
             this.firstNameLabel.Click += new System.EventHandler(this.firstNameLabel_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("AvenirNext LT Pro Bold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(55, 228);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(247, 51);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Cynic bank";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("AvenirNext LT Pro Bold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(55, 252);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 51);
-            this.label3.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("AvenirNext LT Pro Bold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(55, 83);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(213, 51);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Welcome";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("AvenirNext LT Pro Bold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(55, 158);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 51);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "to";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("AvenirNext LT Pro Regular", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(78, 483);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 30);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Sign Up ->";
             // 
             // SignUp
             // 

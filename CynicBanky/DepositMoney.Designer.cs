@@ -35,12 +35,13 @@ namespace CynicBanky
             this.depositAmountInput = new System.Windows.Forms.TextBox();
             this.depositMoneyBtn = new System.Windows.Forms.Button();
             this.amountValidity = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // depositToLabel
             // 
             this.depositToLabel.AutoSize = true;
-            this.depositToLabel.Location = new System.Drawing.Point(66, 75);
+            this.depositToLabel.Location = new System.Drawing.Point(66, 152);
             this.depositToLabel.Name = "depositToLabel";
             this.depositToLabel.Size = new System.Drawing.Size(25, 20);
             this.depositToLabel.TabIndex = 0;
@@ -53,7 +54,7 @@ namespace CynicBanky
             this.selectAccount.Items.AddRange(new object[] {
             "Savings",
             "Current"});
-            this.selectAccount.Location = new System.Drawing.Point(174, 75);
+            this.selectAccount.Location = new System.Drawing.Point(174, 152);
             this.selectAccount.Name = "selectAccount";
             this.selectAccount.Size = new System.Drawing.Size(235, 28);
             this.selectAccount.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace CynicBanky
             // depositAmountLabel
             // 
             this.depositAmountLabel.AutoSize = true;
-            this.depositAmountLabel.Location = new System.Drawing.Point(66, 166);
+            this.depositAmountLabel.Location = new System.Drawing.Point(66, 243);
             this.depositAmountLabel.Name = "depositAmountLabel";
             this.depositAmountLabel.Size = new System.Drawing.Size(62, 20);
             this.depositAmountLabel.TabIndex = 2;
@@ -71,7 +72,7 @@ namespace CynicBanky
             // 
             // depositAmountInput
             // 
-            this.depositAmountInput.Location = new System.Drawing.Point(174, 159);
+            this.depositAmountInput.Location = new System.Drawing.Point(174, 236);
             this.depositAmountInput.Name = "depositAmountInput";
             this.depositAmountInput.Size = new System.Drawing.Size(235, 27);
             this.depositAmountInput.TabIndex = 3;
@@ -79,7 +80,7 @@ namespace CynicBanky
             // 
             // depositMoneyBtn
             // 
-            this.depositMoneyBtn.Location = new System.Drawing.Point(315, 235);
+            this.depositMoneyBtn.Location = new System.Drawing.Point(315, 312);
             this.depositMoneyBtn.Name = "depositMoneyBtn";
             this.depositMoneyBtn.Size = new System.Drawing.Size(94, 29);
             this.depositMoneyBtn.TabIndex = 4;
@@ -91,18 +92,29 @@ namespace CynicBanky
             // 
             this.amountValidity.AutoSize = true;
             this.amountValidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.amountValidity.Location = new System.Drawing.Point(299, 126);
+            this.amountValidity.Location = new System.Drawing.Point(299, 203);
             this.amountValidity.Name = "amountValidity";
             this.amountValidity.Size = new System.Drawing.Size(110, 20);
             this.amountValidity.TabIndex = 5;
             this.amountValidity.Text = "Invalid Amount";
             this.amountValidity.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("AvenirNext LT Pro Regular", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(66, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(261, 41);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Deposit Money";
+            // 
             // DepositMoney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.amountValidity);
             this.Controls.Add(this.depositMoneyBtn);
             this.Controls.Add(this.depositAmountInput);
@@ -126,5 +138,6 @@ namespace CynicBanky
         private System.Windows.Forms.TextBox depositAmountInput;
         private System.Windows.Forms.Button depositMoneyBtn;
         private System.Windows.Forms.Label amountValidity;
+        private System.Windows.Forms.Label label1;
     }
 }

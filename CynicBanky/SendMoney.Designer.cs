@@ -59,6 +59,7 @@ namespace CynicBanky
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 20;
             this.comboBox1.Items.AddRange(new object[] {
             "Current",
             "Savings"});

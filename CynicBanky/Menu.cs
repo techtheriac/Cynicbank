@@ -55,5 +55,12 @@ namespace CynicBanky
             dashboard.MdiParent = this;
             dashboard.Show();
         }
+
+        private void accountSummaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountSummary accountSummary = new AccountSummary();
+            accountSummary.MdiParent = this;
+            accountSummary.Show();
+        }
     }
 }

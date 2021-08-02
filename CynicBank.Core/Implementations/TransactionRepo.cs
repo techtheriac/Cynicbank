@@ -96,6 +96,7 @@ namespace CynicBank.Core.Implementations
                         if(NotAllowableAmount(amount, item.AccountBalance) == true)
                         {
                             UiMessage = "Insufficient funds";
+                            break;
                         }
                         else
                         {
@@ -125,6 +126,6 @@ namespace CynicBank.Core.Implementations
     
 
         Func<int, int, bool> SavingNotAllowableAmount = (amount, balance) =>
-            balance <= 1000 && amount >= 1000;
+            balance <= 1000 || amount > balance;
     }
 }
