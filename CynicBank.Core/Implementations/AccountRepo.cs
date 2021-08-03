@@ -9,21 +9,22 @@ using Commons;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Models;
+using CynicBank.Persistence.Implementations;
+using CynicBank.Persistence.Interfaces;
 
 namespace CynicBank.Core.Implementations
 {
     public class AccountRepo : IAccountRepo
     {
-        private readonly DbHandler<Account> _dbHandler;
-        private string AccountsPath
-          = @"C:\Users\hp\source\repos\CynicBank\db\accounts.csv";
 
-        public AccountRepo(DbHandler<Account> dbHandler)
+        private readonly IAccountManager _AccountManager;
+        public AccountRepo(IAccountManager accountManager)
         {
-            _dbHandler = dbHandler;
+            _AccountManager = accountManager;
         }
         public bool CreateCurrentAccount(int initialBalance, User userModel)
         {
+            // Create Account Model
             var newAccount = new Account
             {
                 Id = userModel.Email,
@@ -33,16 +34,11 @@ namespace CynicBank.Core.Implementations
                 AccountBalance = initialBalance,
             };
 
-            if (AccountExits(AccountType.Current) == true)
-            {
-                return false;
-            }
-            else
-            {
-                var status = _dbHandler.WriteToFile(newAccount, AccountsPath);
+            // Run query to find if account exists or not
+            // If account account already exists return false;
+            // Otherwise Add Account MOdel to database;
 
-                return status;
-            }
+            return false;
         }
 
         public bool CreateSavingsAccount(int initialBalance, User userModel)
@@ -56,30 +52,9 @@ namespace CynicBank.Core.Implementations
                 AccountBalance = initialBalance,
             };
 
-            if (AccountExits(AccountType.Savings) == true)
-            {
-                return false;
-            }
-            else
-            {
-               var status = _dbHandler.WriteToFile(newAccount, AccountsPath);
-               return status;
-            }
-        }
+            // Same as above
 
-        public List<Account> ReadFile(string filePath)
-        {
-            return _dbHandler.ReadFile(filePath);
-        }
-
-        private bool AccountExits(AccountType accountType)
-        {
-            var accountList = ReadFile(AccountsPath);
-
-          //var accountTypeString = accountType.ToString();
-            var accountId = Session.LoggedInUser.Email;
-
-            return accountList.Exists(x => x.Id == accountId && x.AccountType == accountType);
+            return false;
         }
     }
 }

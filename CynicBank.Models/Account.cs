@@ -18,15 +18,18 @@ namespace Models
 
         public string AccountName { get; set; }
 
-        public int AccountBalance { get; set; }
+        public decimal AccountBalance { get; set; }
 
-        public List<Transaction> TransactionLog { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime UpdatedAt { get; set; }
 
 
-        //public Account()
-        //{
-        //    AccountNumber = Helpers.GenerateAccountNumber();
-        //    TransactionLog = new List<Transaction>();
-        //}
+        public Account()
+        {
+            Id = Guid.NewGuid().ToString();
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+        }
     }
 }

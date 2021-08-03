@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Models;
-using Commons;
 using CynicBank.Core.Implementations;
+using CynicBank.Persistence.Implementations;
+using CynicBank.Persistence.Interfaces;
 
 namespace CynicBanky
 {
@@ -37,7 +33,11 @@ namespace CynicBanky
 
         private void selectAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _depositTo = selectAccount.SelectedItem.ToString() == "Current" ? AccountType.Current : AccountType.Savings;
+            _depositTo = 
+                selectAccount.SelectedItem.ToString() == 
+                "Current" ? 
+                AccountType.Current 
+                : AccountType.Savings;
         }
 
         private void depositAmountInput_TextChanged(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace CynicBanky
 
         private void depositMoneyBtn_Click(object sender, EventArgs e)
         {
-            var transactionHandler = new TransactionRepo(new DbHandler<Transaction>(), new DbHandler<Account>());
+            var transactionHandler = new TransactionRepo(new TransactionManager(), new AccountManager());
 
             var status = transactionHandler.MakeDeposit(_depositAmount, _depositTo);
 

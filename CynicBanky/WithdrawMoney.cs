@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using Models;
 using Commons;
 using CynicBank.Core.Implementations;
+using CynicBank.Persistence.Implementations;
+using CynicBank.Persistence.Interfaces;
 
 namespace CynicBanky
 {
@@ -53,7 +55,7 @@ namespace CynicBanky
 
         private void withdrawButton_Click(object sender, EventArgs e)
         {
-            var transactionHandler = new TransactionRepo(new DbHandler<Transaction>(), new DbHandler<Account>());
+            var transactionHandler = new TransactionRepo(new TransactionManager(), new AccountManager());
 
             var status = transactionHandler.WithdrawMoney(_withdrawAmount, _withdrawFrom);
 

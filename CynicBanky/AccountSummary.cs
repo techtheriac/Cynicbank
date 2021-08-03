@@ -62,7 +62,7 @@ namespace CynicBanky
             {
                 if(item.Id == Session.LoggedInUser.Email)
                 {
-                    table1.Rows.Add(item.Date, item.Description, item.Amount, item.TypeOfTransaction);
+                    table1.Rows.Add(item.CreatedAt, item.Description, item.Amount, item.TypeOfTransaction);
                 }
             }
 

@@ -7,6 +7,9 @@ using CsvHelper;
 using System.Globalization;
 using System.Linq;
 using Models;
+using CynicBank.Persistence;
+using CynicBank.Persistence.Interfaces;
+using CynicBank.Persistence.Implementations;
 
 namespace CynicBank.Core.Implementations
 {
@@ -15,45 +18,25 @@ namespace CynicBank.Core.Implementations
     /// </summary>
     public class AuthRepo : IAuthRepo
     {
-
-        private string UserPath { get; set; }
-            = @"C:\Users\hp\source\repos\CynicBank\db\users.csv";
-
-        private readonly DbHandler<User> _dbHandler;
-        public AuthRepo(DbHandler<User> dbHandler)
+        private readonly IUserManager _UserManager;
+       
+        public AuthRepo(IUserManager userManager)
         {
-            _dbHandler = dbHandler;
+            _UserManager = userManager;
         }
 
         public bool Login(string email, string password)
         {
+            //Run database query to find if user exists
 
-            var userList = ReadFile(UserPath);
-
-            var matchedUser = userList.FirstOrDefault(a => a.Password == password && a.Email == email);
-
-            if(matchedUser != null)
-            {
-                Session.LoggedInUser = matchedUser;
-                Session.UserName = matchedUser.FirstName;
-                return true;
-            } 
-            else
-            {
-                return false;
-            }
+            //Update session object on persistence layer if user exists
+            return false;
         }
 
         public bool Logout(string email)
         {
-            Session.LoggedInUser = null;
-
-            return true;
-        }
-
-        public List<User> ReadFile(string filePath)
-        {
-            return _dbHandler.ReadFile(filePath);
+            //Update session object on persistence layer
+            return false;
         }
 
     }

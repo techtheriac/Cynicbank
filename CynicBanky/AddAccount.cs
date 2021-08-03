@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using CynicBank.Core.Implementations;
+using CynicBank.Persistence.Implementations;
+using CynicBank.Persistence.Interfaces;
 using Commons;
 using Models;
 
@@ -48,7 +50,7 @@ namespace CynicBanky
 
         private void addAccountBtn_Click(object sender, EventArgs e)
         {
-            var createAccount = new AccountRepo(new DbHandler<Account>());
+            var createAccount = new AccountRepo(new AccountManager());
 
             if (_accountType == AccountType.Current)
             {

@@ -2,6 +2,8 @@
 using System;
 using System.Windows.Forms;
 using Models;
+using CynicBank.Persistence.Implementations;
+using CynicBank.Persistence.Interfaces;
 
 namespace CynicBanky
 {
@@ -71,7 +73,7 @@ namespace CynicBanky
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            var auth = new AuthRepo(new DbHandler<User>());
+            var auth = new AuthRepo(new UserManager());
             bool status = auth.Login(_email, _password);
 
             if(status == true)

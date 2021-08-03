@@ -40,9 +40,10 @@ namespace CynicBanky
             // addAccountType
             // 
             this.addAccountType.AutoSize = true;
-            this.addAccountType.Location = new System.Drawing.Point(78, 102);
+            this.addAccountType.Font = new System.Drawing.Font("Aribau Grotesk", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addAccountType.Location = new System.Drawing.Point(77, 99);
             this.addAccountType.Name = "addAccountType";
-            this.addAccountType.Size = new System.Drawing.Size(142, 20);
+            this.addAccountType.Size = new System.Drawing.Size(185, 23);
             this.addAccountType.TabIndex = 0;
             this.addAccountType.Text = "Select Account Type";
             // 
@@ -52,32 +53,33 @@ namespace CynicBanky
             this.selectAccount.Items.AddRange(new object[] {
             "Current",
             "Savings"});
-            this.selectAccount.Location = new System.Drawing.Point(298, 94);
+            this.selectAccount.Location = new System.Drawing.Point(348, 94);
             this.selectAccount.Name = "selectAccount";
-            this.selectAccount.Size = new System.Drawing.Size(151, 28);
+            this.selectAccount.Size = new System.Drawing.Size(215, 28);
             this.selectAccount.TabIndex = 1;
             this.selectAccount.SelectedIndexChanged += new System.EventHandler(this.selectAccount_SelectedIndexChanged);
             // 
             // addInitialBalanceLabel
             // 
             this.addInitialBalanceLabel.AutoSize = true;
-            this.addInitialBalanceLabel.Location = new System.Drawing.Point(90, 187);
+            this.addInitialBalanceLabel.Font = new System.Drawing.Font("Aribau Grotesk", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addInitialBalanceLabel.Location = new System.Drawing.Point(89, 184);
             this.addInitialBalanceLabel.Name = "addInitialBalanceLabel";
-            this.addInitialBalanceLabel.Size = new System.Drawing.Size(102, 20);
+            this.addInitialBalanceLabel.Size = new System.Drawing.Size(130, 23);
             this.addInitialBalanceLabel.TabIndex = 2;
             this.addInitialBalanceLabel.Text = "Initial Deposit";
             // 
             // initalDepositInput
             // 
-            this.initalDepositInput.Location = new System.Drawing.Point(298, 184);
+            this.initalDepositInput.Location = new System.Drawing.Point(348, 184);
             this.initalDepositInput.Name = "initalDepositInput";
-            this.initalDepositInput.Size = new System.Drawing.Size(151, 27);
+            this.initalDepositInput.Size = new System.Drawing.Size(215, 27);
             this.initalDepositInput.TabIndex = 3;
             this.initalDepositInput.TextChanged += new System.EventHandler(this.initalDepositInput_TextChanged);
             // 
             // addAccountBtn
             // 
-            this.addAccountBtn.Location = new System.Drawing.Point(354, 290);
+            this.addAccountBtn.Location = new System.Drawing.Point(469, 293);
             this.addAccountBtn.Name = "addAccountBtn";
             this.addAccountBtn.Size = new System.Drawing.Size(94, 29);
             this.addAccountBtn.TabIndex = 4;
@@ -89,7 +91,7 @@ namespace CynicBanky
             // 
             this.amountValidity.AutoSize = true;
             this.amountValidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.amountValidity.Location = new System.Drawing.Point(339, 152);
+            this.amountValidity.Location = new System.Drawing.Point(451, 155);
             this.amountValidity.Name = "amountValidity";
             this.amountValidity.Size = new System.Drawing.Size(110, 20);
             this.amountValidity.TabIndex = 5;
@@ -107,6 +109,8 @@ namespace CynicBanky
             this.Controls.Add(this.addInitialBalanceLabel);
             this.Controls.Add(this.selectAccount);
             this.Controls.Add(this.addAccountType);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddAccount";
             this.Text = "AddAccount";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

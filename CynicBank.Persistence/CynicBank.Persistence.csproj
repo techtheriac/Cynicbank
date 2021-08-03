@@ -5,13 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Commons\Commons.csproj" />
-    <ProjectReference Include="..\CynicBank.Models\Models.csproj" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Implementations\" />
+    <ProjectReference Include="..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\CynicBank.Models\Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,12 +10,22 @@ namespace Models
         /// Models Bank transaction details
         /// </summary>
         public string Id { get; set; }
-        public DateTime Date { get; private set; } = DateTime.Now;
-
+        
         public string Description { get; set; }
 
-        public int Amount { get; set; }
+        public decimal Amount { get; set; }
 
         public TransactionType TypeOfTransaction { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime UpdatedAt { get; set; }
+
+        public Transaction()
+        {
+            Id = Guid.NewGuid().ToString();
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+        }
     }
 }

@@ -31,8 +31,6 @@ namespace CynicBanky
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.choosePassword = new System.Windows.Forms.TextBox();
@@ -70,8 +68,6 @@ namespace CynicBanky
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(49)))), ((int)(((byte)(97)))));
             this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
@@ -96,8 +92,8 @@ namespace CynicBanky
             this.splitContainer1.Panel2.Controls.Add(this.lastNameLabel);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.firstNameLabel);
-            this.splitContainer1.Size = new System.Drawing.Size(1170, 806);
-            this.splitContainer1.SplitterDistance = 362;
+            this.splitContainer1.Size = new System.Drawing.Size(1222, 806);
+            this.splitContainer1.SplitterDistance = 378;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -112,30 +108,6 @@ namespace CynicBanky
             this.label3.Size = new System.Drawing.Size(0, 51);
             this.label3.TabIndex = 1;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Aribau Grotesk", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(217)))), ((int)(((byte)(218)))));
-            this.label5.Location = new System.Drawing.Point(135, 163);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 55);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "to";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Aribau Grotesk", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(217)))), ((int)(((byte)(218)))));
-            this.label4.Location = new System.Drawing.Point(55, 83);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 55);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Welcome";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -147,13 +119,14 @@ namespace CynicBanky
             this.label6.Size = new System.Drawing.Size(136, 30);
             this.label6.TabIndex = 1;
             this.label6.Text = "Sign Up ->";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Aribau Grotesk", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(217)))), ((int)(((byte)(218)))));
-            this.label2.Location = new System.Drawing.Point(55, 228);
+            this.label2.Location = new System.Drawing.Point(55, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(247, 55);
@@ -168,6 +141,7 @@ namespace CynicBanky
             this.choosePassword.Location = new System.Drawing.Point(93, 424);
             this.choosePassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.choosePassword.MinimumSize = new System.Drawing.Size(2, 50);
+            this.choosePassword.Multiline = true;
             this.choosePassword.Name = "choosePassword";
             this.choosePassword.PasswordChar = '*';
             this.choosePassword.Size = new System.Drawing.Size(363, 50);
@@ -178,12 +152,13 @@ namespace CynicBanky
             // 
             this.confirmPassword.BackColor = System.Drawing.Color.WhiteSmoke;
             this.confirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirmPassword.Font = new System.Drawing.Font("AvenirNext LT Pro Cn", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.confirmPassword.Font = new System.Drawing.Font("Aribau Grotesk", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.confirmPassword.Location = new System.Drawing.Point(92, 538);
             this.confirmPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.confirmPassword.Multiline = true;
             this.confirmPassword.Name = "confirmPassword";
             this.confirmPassword.PasswordChar = '*';
-            this.confirmPassword.Size = new System.Drawing.Size(363, 25);
+            this.confirmPassword.Size = new System.Drawing.Size(363, 48);
             this.confirmPassword.TabIndex = 3;
             this.confirmPassword.TextChanged += new System.EventHandler(this.confirmPassword_TextChanged);
             // 
@@ -196,7 +171,7 @@ namespace CynicBanky
             this.signupBtn.Location = new System.Drawing.Point(285, 645);
             this.signupBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.signupBtn.Name = "signupBtn";
-            this.signupBtn.Size = new System.Drawing.Size(170, 81);
+            this.signupBtn.Size = new System.Drawing.Size(171, 63);
             this.signupBtn.TabIndex = 2;
             this.signupBtn.Text = "Sign Up";
             this.signupBtn.UseVisualStyleBackColor = false;
@@ -204,13 +179,18 @@ namespace CynicBanky
             // 
             // loginLinkbtn
             // 
-            this.loginLinkbtn.Location = new System.Drawing.Point(611, 122);
+            this.loginLinkbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(52)))));
+            this.loginLinkbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginLinkbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginLinkbtn.Font = new System.Drawing.Font("Aribau Grotesk", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.loginLinkbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.loginLinkbtn.Location = new System.Drawing.Point(633, 122);
             this.loginLinkbtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.loginLinkbtn.Name = "loginLinkbtn";
-            this.loginLinkbtn.Size = new System.Drawing.Size(82, 26);
+            this.loginLinkbtn.Size = new System.Drawing.Size(132, 50);
             this.loginLinkbtn.TabIndex = 2;
             this.loginLinkbtn.Text = "Log in";
-            this.loginLinkbtn.UseVisualStyleBackColor = true;
+            this.loginLinkbtn.UseVisualStyleBackColor = false;
             this.loginLinkbtn.Click += new System.EventHandler(this.loginLinkbtn_Click);
             // 
             // emailInput
@@ -221,6 +201,7 @@ namespace CynicBanky
             this.emailInput.Location = new System.Drawing.Point(93, 327);
             this.emailInput.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.emailInput.MinimumSize = new System.Drawing.Size(2, 50);
+            this.emailInput.Multiline = true;
             this.emailInput.Name = "emailInput";
             this.emailInput.PlaceholderText = "johndoe@gmail.com";
             this.emailInput.Size = new System.Drawing.Size(363, 50);
@@ -235,6 +216,7 @@ namespace CynicBanky
             this.lastNameInput.Location = new System.Drawing.Point(93, 225);
             this.lastNameInput.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lastNameInput.MinimumSize = new System.Drawing.Size(2, 50);
+            this.lastNameInput.Multiline = true;
             this.lastNameInput.Name = "lastNameInput";
             this.lastNameInput.Size = new System.Drawing.Size(363, 50);
             this.lastNameInput.TabIndex = 1;
@@ -274,8 +256,9 @@ namespace CynicBanky
             this.firstNameInput.Location = new System.Drawing.Point(93, 122);
             this.firstNameInput.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.firstNameInput.MinimumSize = new System.Drawing.Size(2, 50);
+            this.firstNameInput.Multiline = true;
             this.firstNameInput.Name = "firstNameInput";
-            this.firstNameInput.Size = new System.Drawing.Size(363, 50);
+            this.firstNameInput.Size = new System.Drawing.Size(354, 50);
             this.firstNameInput.TabIndex = 1;
             this.firstNameInput.TextChanged += new System.EventHandler(this.firstNameInput_TextChanged);
             // 
@@ -353,11 +336,11 @@ namespace CynicBanky
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("AvenirNext LT Pro Regular", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(538, 83);
+            this.label1.Font = new System.Drawing.Font("Aribau Grotesk", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(558, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 18);
+            this.label1.Size = new System.Drawing.Size(207, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Already have an account?";
             // 
@@ -377,11 +360,13 @@ namespace CynicBanky
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 806);
+            this.ClientSize = new System.Drawing.Size(1222, 806);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("AvenirNext LT Pro Cn", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximumSize = new System.Drawing.Size(1240, 853);
             this.Name = "SignUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";
             this.Load += new System.EventHandler(this.SignUp_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -415,8 +400,6 @@ namespace CynicBanky
         private System.Windows.Forms.TextBox confirmPassword;
         private System.Windows.Forms.TextBox choosePassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
     }
