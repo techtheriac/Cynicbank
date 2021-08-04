@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using CynicBank.Core.Implementations;
+using CynicBank.Persistence;
 using CynicBank.Persistence.Implementations;
 using CynicBank.Persistence.Interfaces;
 using Commons;

@@ -18,6 +18,8 @@ namespace Models
 
         public string AccountName { get; set; }
 
+        public string UserId { get; set; }
+
         public decimal AccountBalance { get; set; }
 
         public DateTime CreatedAt { get; set; }

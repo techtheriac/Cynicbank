@@ -5,6 +5,7 @@ using CynicBank.Core.Interfaces;
 using Models;
 using CynicBank.Persistence.Implementations;
 using CynicBank.Persistence.Interfaces;
+using CynicBank.Persistence;
 
 namespace CynicBank.Core.Implementations
 {

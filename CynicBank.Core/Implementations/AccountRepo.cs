@@ -27,34 +27,44 @@ namespace CynicBank.Core.Implementations
             // Create Account Model
             var newAccount = new Account
             {
-                Id = userModel.Email,
                 AccountType = AccountType.Current,
-                AccountName = userModel.FullName,
+                AccountName = $"{userModel.FirstName} {userModel.LastName}",
                 AccountNumber = Helpers.GenerateAccountNumber(),
-                AccountBalance = initialBalance,
+                AccountBalance = (decimal)initialBalance,
+                UserId = userModel.Id
             };
 
-            // Run query to find if account exists or not
-            // If account account already exists return false;
-            // Otherwise Add Account MOdel to database;
-
-            return false;
+            if(_AccountManager.AccountExist(newAccount) == true)
+            {
+                return false;
+            }
+            else
+            {
+                var status = _AccountManager.AddAccount(newAccount);
+                return status;
+            }
         }
 
         public bool CreateSavingsAccount(int initialBalance, User userModel)
         {
             var newAccount = new Account
             {
-                Id = userModel.Email,
                 AccountType = AccountType.Savings,
-                AccountName = userModel.FullName,
+                AccountName = $"{userModel.FirstName} {userModel.LastName}",
                 AccountNumber = Helpers.GenerateAccountNumber(),
-                AccountBalance = initialBalance,
+                AccountBalance = (decimal)initialBalance,
+                UserId = userModel.Id
             };
 
-            // Same as above
-
-            return false;
+            if(_AccountManager.AccountExist(newAccount) == true)
+            {
+                return false;
+            }
+            else
+            {
+                var status = _AccountManager.AddAccount(newAccount);
+                return status;
+            }
         }
     }
 }

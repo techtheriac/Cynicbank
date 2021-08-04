@@ -32,13 +32,13 @@ namespace CynicBanky
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.withdrawMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.depositCashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@ namespace CynicBanky
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(900, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1222, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,9 +68,16 @@ namespace CynicBanky
             // addAccountToolStripMenuItem
             // 
             this.addAccountToolStripMenuItem.Name = "addAccountToolStripMenuItem";
-            this.addAccountToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addAccountToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.addAccountToolStripMenuItem.Text = "Add Account";
             this.addAccountToolStripMenuItem.Click += new System.EventHandler(this.addAccountToolStripMenuItem_Click);
+            // 
+            // accountSummaryToolStripMenuItem
+            // 
+            this.accountSummaryToolStripMenuItem.Name = "accountSummaryToolStripMenuItem";
+            this.accountSummaryToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.accountSummaryToolStripMenuItem.Text = "Account Summary";
+            this.accountSummaryToolStripMenuItem.Click += new System.EventHandler(this.accountSummaryToolStripMenuItem_Click);
             // 
             // transactionsToolStripMenuItem
             // 
@@ -118,23 +125,20 @@ namespace CynicBanky
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // accountSummaryToolStripMenuItem
-            // 
-            this.accountSummaryToolStripMenuItem.Name = "accountSummaryToolStripMenuItem";
-            this.accountSummaryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.accountSummaryToolStripMenuItem.Text = "Account Summary";
-            this.accountSummaryToolStripMenuItem.Click += new System.EventHandler(this.accountSummaryToolStripMenuItem_Click);
-            // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 405);
+            this.ClientSize = new System.Drawing.Size(1222, 806);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Aribau Grotesk", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1240, 853);
+            this.MinimumSize = new System.Drawing.Size(1240, 853);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);

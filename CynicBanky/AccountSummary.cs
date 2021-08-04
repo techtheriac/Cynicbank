@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using CynicBank.Core.Implementations;
 using Models;
+using CynicBank.Persistence;
 
 namespace CynicBanky
 {

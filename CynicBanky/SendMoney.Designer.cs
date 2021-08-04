@@ -41,18 +41,18 @@ namespace CynicBanky
             // sendFromLabel
             // 
             this.sendFromLabel.AutoSize = true;
-            this.sendFromLabel.Location = new System.Drawing.Point(90, 81);
+            this.sendFromLabel.Location = new System.Drawing.Point(101, 81);
             this.sendFromLabel.Name = "sendFromLabel";
-            this.sendFromLabel.Size = new System.Drawing.Size(43, 20);
+            this.sendFromLabel.Size = new System.Drawing.Size(48, 20);
             this.sendFromLabel.TabIndex = 0;
             this.sendFromLabel.Text = "From";
             // 
             // sendToLabel
             // 
             this.sendToLabel.AutoSize = true;
-            this.sendToLabel.Location = new System.Drawing.Point(90, 170);
+            this.sendToLabel.Location = new System.Drawing.Point(101, 170);
             this.sendToLabel.Name = "sendToLabel";
-            this.sendToLabel.Size = new System.Drawing.Size(25, 20);
+            this.sendToLabel.Size = new System.Drawing.Size(26, 20);
             this.sendToLabel.TabIndex = 0;
             this.sendToLabel.Text = "To";
             // 
@@ -63,9 +63,9 @@ namespace CynicBanky
             this.comboBox1.Items.AddRange(new object[] {
             "Current",
             "Savings"});
-            this.comboBox1.Location = new System.Drawing.Point(260, 78);
+            this.comboBox1.Location = new System.Drawing.Point(292, 78);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.Size = new System.Drawing.Size(169, 28);
             this.comboBox1.TabIndex = 1;
             // 
             // comboBox2
@@ -74,16 +74,16 @@ namespace CynicBanky
             this.comboBox2.Items.AddRange(new object[] {
             "Current",
             "Savings"});
-            this.comboBox2.Location = new System.Drawing.Point(260, 170);
+            this.comboBox2.Location = new System.Drawing.Point(292, 170);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
+            this.comboBox2.Size = new System.Drawing.Size(169, 28);
             this.comboBox2.TabIndex = 1;
             // 
             // sendMoneyBtn
             // 
-            this.sendMoneyBtn.Location = new System.Drawing.Point(317, 333);
+            this.sendMoneyBtn.Location = new System.Drawing.Point(357, 333);
             this.sendMoneyBtn.Name = "sendMoneyBtn";
-            this.sendMoneyBtn.Size = new System.Drawing.Size(94, 29);
+            this.sendMoneyBtn.Size = new System.Drawing.Size(106, 29);
             this.sendMoneyBtn.TabIndex = 2;
             this.sendMoneyBtn.Text = "Send";
             this.sendMoneyBtn.UseVisualStyleBackColor = true;
@@ -91,24 +91,24 @@ namespace CynicBanky
             // sendAmountLabel
             // 
             this.sendAmountLabel.AutoSize = true;
-            this.sendAmountLabel.Location = new System.Drawing.Point(90, 262);
+            this.sendAmountLabel.Location = new System.Drawing.Point(101, 262);
             this.sendAmountLabel.Name = "sendAmountLabel";
-            this.sendAmountLabel.Size = new System.Drawing.Size(62, 20);
+            this.sendAmountLabel.Size = new System.Drawing.Size(66, 20);
             this.sendAmountLabel.TabIndex = 0;
             this.sendAmountLabel.Text = "Amount";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(260, 262);
+            this.textBox1.Location = new System.Drawing.Point(292, 262);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 27);
+            this.textBox1.Size = new System.Drawing.Size(169, 27);
             this.textBox1.TabIndex = 3;
             // 
             // SendMoney
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1222, 806);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.sendMoneyBtn);
             this.Controls.Add(this.comboBox2);
@@ -116,7 +116,12 @@ namespace CynicBanky
             this.Controls.Add(this.sendAmountLabel);
             this.Controls.Add(this.sendToLabel);
             this.Controls.Add(this.sendFromLabel);
+            this.Font = new System.Drawing.Font("Aribau Grotesk", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MaximumSize = new System.Drawing.Size(1240, 853);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1240, 853);
             this.Name = "SendMoney";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SendMoney";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);

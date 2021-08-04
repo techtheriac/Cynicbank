@@ -43,8 +43,10 @@ namespace CynicBanky
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.MaximumSize = new System.Drawing.Size(1240, 853);
+            this.panel1.MinimumSize = new System.Drawing.Size(1240, 853);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 405);
+            this.panel1.Size = new System.Drawing.Size(1240, 853);
             this.panel1.TabIndex = 0;
             // 
             // username
@@ -85,12 +87,15 @@ namespace CynicBanky
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(0)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(900, 405);
+            this.ClientSize = new System.Drawing.Size(1222, 806);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("AvenirNext LT Pro Regular", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1240, 853);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1240, 853);
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Dashboard_Load);

@@ -197,7 +197,9 @@ namespace CynicBanky
             this.Font = new System.Drawing.Font("AvenirNext LT Pro Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1240, 853);
+            this.MinimumSize = new System.Drawing.Size(1240, 853);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

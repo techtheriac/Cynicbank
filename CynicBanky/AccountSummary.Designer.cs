@@ -42,32 +42,32 @@ namespace CynicBanky
             this.AccountDetails.AllowUserToAddRows = false;
             this.AccountDetails.AllowUserToDeleteRows = false;
             this.AccountDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AccountDetails.Location = new System.Drawing.Point(52, 95);
+            this.AccountDetails.Location = new System.Drawing.Point(58, 95);
             this.AccountDetails.Name = "AccountDetails";
             this.AccountDetails.ReadOnly = true;
             this.AccountDetails.RowHeadersWidth = 51;
             this.AccountDetails.RowTemplate.Height = 29;
-            this.AccountDetails.Size = new System.Drawing.Size(970, 188);
+            this.AccountDetails.Size = new System.Drawing.Size(1091, 188);
             this.AccountDetails.TabIndex = 0;
             this.AccountDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountDetails_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("AvenirNext LT Pro Regular", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(52, 45);
+            this.label1.Font = new System.Drawing.Font("Aribau Grotesk", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(58, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 30);
+            this.label1.Size = new System.Drawing.Size(219, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "Account Balance";
             // 
             // transactionHistory
             // 
             this.transactionHistory.AutoSize = true;
-            this.transactionHistory.Font = new System.Drawing.Font("AvenirNext LT Pro Regular", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.transactionHistory.Location = new System.Drawing.Point(63, 338);
+            this.transactionHistory.Font = new System.Drawing.Font("Aribau Grotesk", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.transactionHistory.Location = new System.Drawing.Point(71, 338);
             this.transactionHistory.Name = "transactionHistory";
-            this.transactionHistory.Size = new System.Drawing.Size(223, 30);
+            this.transactionHistory.Size = new System.Drawing.Size(238, 33);
             this.transactionHistory.TabIndex = 1;
             this.transactionHistory.Text = "Tranaction History";
             // 
@@ -76,25 +76,31 @@ namespace CynicBanky
             this.history.AllowUserToAddRows = false;
             this.history.AllowUserToDeleteRows = false;
             this.history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.history.Location = new System.Drawing.Point(63, 405);
+            this.history.Location = new System.Drawing.Point(71, 405);
             this.history.Name = "history";
             this.history.ReadOnly = true;
             this.history.RowHeadersWidth = 51;
             this.history.RowTemplate.Height = 29;
-            this.history.Size = new System.Drawing.Size(959, 188);
+            this.history.Size = new System.Drawing.Size(1079, 188);
             this.history.TabIndex = 2;
             // 
             // AccountSummary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 508);
+            this.ClientSize = new System.Drawing.Size(1222, 806);
             this.Controls.Add(this.history);
             this.Controls.Add(this.transactionHistory);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AccountDetails);
+            this.Font = new System.Drawing.Font("Aribau Grotesk", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1240, 853);
+            this.MinimumSize = new System.Drawing.Size(1240, 853);
             this.Name = "AccountSummary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AccountSummary";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AccountSummary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AccountDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.history)).EndInit();
