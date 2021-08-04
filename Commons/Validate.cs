@@ -49,6 +49,10 @@ namespace Commons
 
         public static bool IsValidEmail(string email)
         {
+            if(email == null)
+            {
+                return false;
+            }
             string pattern = @"\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b";
             Regex CodeRgx = new Regex(pattern, RegexOptions.IgnoreCase);
             return CodeRgx.IsMatch(email);
@@ -56,6 +60,10 @@ namespace Commons
 
         public static bool IsValidName(string name)
         {
+            if(name == null)
+            {
+                return false;
+            }
             string pattern = @"(^[a-zA-Z]+$)";
 
             Regex CodeRgx = new Regex(pattern, RegexOptions.IgnoreCase);

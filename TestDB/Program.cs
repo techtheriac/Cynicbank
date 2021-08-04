@@ -1,6 +1,7 @@
 ﻿using System;
 using CynicBank.Persistence.Implementations;
 using Models;
+using System.Collections;
 
 namespace TestDB
 {
@@ -11,12 +12,12 @@ namespace TestDB
             UserManager userManager = new UserManager();
 
             var newUser = new User
-            {
-                FirstName = "Fabian",
-                LastName = "Jachi",
-                Email = "Lawal",
-                Password = "gowon",
-            };
+                (
+                "Gbolahan",
+                "Alabi",
+                "gbolahanalabi@yahoo.com",
+                "alibi"
+                );
 
             userManager.AddUser(newUser);
 
@@ -24,7 +25,7 @@ namespace TestDB
 
             foreach (var item in res)
             {
-                Console.WriteLine(item.Email);
+                Console.WriteLine(item.FullName);
             }
         }
     }

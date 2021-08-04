@@ -9,6 +9,5 @@ namespace CynicBank.Core.Interfaces
     {
         bool AddNewUser(User userModel);
 
-        bool CheckIfExits(string email);
     }
 }

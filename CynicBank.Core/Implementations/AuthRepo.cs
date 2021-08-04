@@ -27,16 +27,25 @@ namespace CynicBank.Core.Implementations
 
         public bool Login(string email, string password)
         {
-            //Run database query to find if user exists
+            var users = _UserManager.RetrieveUsers();
 
-            //Update session object on persistence layer if user exists
-            return false;
+            var matchedUser = users.FirstOrDefault(x => x.Email == email && x.Password == password);
+
+            if(matchedUser != null)
+            {
+                Session.LoggedInUser = matchedUser;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool Logout(string email)
         {
-            //Update session object on persistence layer
-            return false;
+            Session.LoggedInUser = null;
+            return true;
         }
 
     }

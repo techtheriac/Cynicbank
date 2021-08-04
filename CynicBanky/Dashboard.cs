@@ -20,7 +20,7 @@ namespace CynicBanky
         {
             if(Session.LoggedInUser != null)
             {
-                username.Text = Session.UserName;
+                username.Text = Session.LoggedInUser.FirstName;
             }
         }
 

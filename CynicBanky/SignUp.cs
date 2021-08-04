@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using Commons;
 using CynicBank.Core.Implementations;
 using CynicBank.Core.Interfaces;
+using CynicBank.Persistence.Interfaces;
+using CynicBank.Persistence.Implementations;
 using Models;
 
 namespace CynicBanky
@@ -134,16 +136,23 @@ namespace CynicBanky
             
             if(evaluateValidity != true)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Fields cannot be empty");
             } else
             {
-                var userAction = new UserRepo(new DbHandler<User>());
-                var userModel = new User { FirstName = _firstName, LastName = _lastName, Email = _emial, Password = _password };
+                var userAction = new UserRepo(new UserManager());
+                var userModel = 
+                    new User(
+                        _firstName,
+                        _lastName,
+                        _emial,
+                        _password
+                    );
                 bool status = userAction.AddNewUser(userModel);
 
                 if(status == true)
                 {
                     var login = new Login();
+                    MessageBox.Show("Sign up successfull. Proceed to log in");
                     this.Hide();
                     login.Show();
                 }

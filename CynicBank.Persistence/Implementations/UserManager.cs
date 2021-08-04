@@ -19,23 +19,24 @@ namespace CynicBank.Persistence.Implementations
             }
             else
             {
-                string sql = "INSERT INTO Users(Id, FirstName, LastName, FullName, Email, Password, CreatedAt, UpdatedAt)";
-                sql += " VALUES(@Id, @FirstName, @LastName, @FullName, @Email, @Password, @CreatedAt, @UpdatedAt)";
-
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    using (SqlCommand command = new SqlCommand("addNewUser", connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@Id", model.Id));
-                        command.Parameters.Add(new SqlParameter("@FirstName", model.FirstName));
-                        command.Parameters.Add(new SqlParameter("@LastName", model.LastName));
-                        command.Parameters.Add(new SqlParameter("@FullName", model.FullName));
-                        command.Parameters.Add(new SqlParameter("@Email", model.Email));
-                        command.Parameters.Add(new SqlParameter("@Password", model.Password));
-                        command.Parameters.Add(new SqlParameter("@CreatedAt", model.CreatedAt));
-                        command.Parameters.Add(new SqlParameter("@UpdatedAt", model.UpdatedAt));
-
                         connection.Open();
+
+                        command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@Id", model.Id);
+                        command.Parameters.AddWithValue("@FirstName", model.FirstName);
+                        command.Parameters.AddWithValue("@LastName", model.LastName);
+                        command.Parameters.AddWithValue("@FullName", model.FullName);
+                        command.Parameters.AddWithValue("@Email", model.Email);
+                        command.Parameters.AddWithValue("@Password", model.Password);
+                        command.Parameters.AddWithValue("@CreatedAt", model.CreatedAt);
+                        command.Parameters.AddWithValue("@UpdatedAt", model.UpdatedAt);
+
+                        
                         int RowsAffected = command.ExecuteNonQuery();
                     }
 
@@ -52,12 +53,11 @@ namespace CynicBank.Persistence.Implementations
             
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    using (SqlCommand command = new SqlCommand())
+                    using (SqlCommand command = new SqlCommand("spRetrieveUsers", connection))
                     {
                         connection.Open();
-                        command.Connection = connection;
-                        
-                        command.CommandText = $"SELECT * FROM Users";
+                        command.CommandType = System.Data.CommandType.StoredProcedure;
+                    
 
                         SqlDataReader dataReader = command.ExecuteReader();
 

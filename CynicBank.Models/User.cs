@@ -15,12 +15,27 @@ namespace Models
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
+        private string GetFullName(string first, string last) => $"{first} {last}";
+
         public User()
         {
+
+        }
+        public User
+         (string firstName,
+          string lastName,
+          string email,
+          string password
+         )
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Password = password;
             Id = Guid.NewGuid().ToString();
             CreatedAt = DateTime.Now;
             UpdatedAt = DateTime.Now;
-            FullName = $"{FirstName} {LastName}";
+            FullName = GetFullName(firstName, lastName);
         }
     }
 }

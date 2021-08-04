@@ -8,43 +8,32 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using System.Linq;
 using Models;
+using CynicBank.Persistence.Implementations;
+using CynicBank.Persistence.Interfaces;
 
 namespace CynicBank.Core.Implementations
 {
     public class UserRepo : IUserRepo
     {
-        private readonly DbHandler<User> _dbHandler;
-        private static string UserPath = @"C:\Users\hp\source\repos\CynicBank\db\users.csv";
+        private readonly IUserManager _UserManager;
 
-        public UserRepo(DbHandler<User> dbHandler)
+        public UserRepo(IUserManager userManager)
         {
-            _dbHandler = new DbHandler<User>();
+            _UserManager = userManager;
         }
 
         public bool AddNewUser(User userModel)
         {
-            _dbHandler.WriteToFile(userModel, UserPath);
-
-            return true;
-        }
-
-        public bool CheckIfExits(string email)
-        {
-            var userList = ReadFile(UserPath);
-            var doesExist = false;
-
-            foreach (var item in userList)
+           
+            if(_UserManager.UserExists(userModel) == true)
             {
-                doesExist = item.Email == email;
+                return false;
             }
-
-            return doesExist;
+            else
+            {
+                var status = _UserManager.AddUser(userModel);
+                return status;
+            }
         }
-
-        public List<User> ReadFile(string filePath)
-        {
-            return _dbHandler.ReadFile(filePath);
-        }
-
     }
 }
