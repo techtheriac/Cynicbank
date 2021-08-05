@@ -10,6 +10,8 @@ namespace Models
         /// Models Bank transaction details
         /// </summary>
         public string Id { get; set; }
+
+        public string AccountNumber { get; set; }
         
         public string Description { get; set; }
 

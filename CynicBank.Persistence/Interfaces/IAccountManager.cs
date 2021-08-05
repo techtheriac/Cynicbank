@@ -10,6 +10,6 @@ namespace CynicBank.Persistence.Interfaces
         bool AccountExist(Account model);
         List<Account> RetrieveAccounts();
         Account RetrieveAccount(User model, AccountType accountType);
-        bool UpdateAccount(Account model);
+        bool CreditAccount(string accountNumber, decimal amount);
     }
 }

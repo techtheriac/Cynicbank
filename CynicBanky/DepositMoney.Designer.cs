@@ -52,9 +52,6 @@ namespace CynicBanky
             // selectAccount
             // 
             this.selectAccount.FormattingEnabled = true;
-            this.selectAccount.Items.AddRange(new object[] {
-            "Savings",
-            "Current"});
             this.selectAccount.Location = new System.Drawing.Point(504, 235);
             this.selectAccount.Name = "selectAccount";
             this.selectAccount.Size = new System.Drawing.Size(306, 28);

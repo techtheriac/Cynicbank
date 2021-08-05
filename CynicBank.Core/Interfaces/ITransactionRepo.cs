@@ -8,7 +8,7 @@ namespace CynicBank.Core.Interfaces
     public interface ITransactionRepo
     {
         // Logged in User is referenced for these operations
-        string MakeDeposit(decimal amount, AccountType to);
+        string MakeDeposit(decimal amount, string accountNumber);
         string SendMoney(decimal amount, AccountType from, string to);
         string WithdrawMoney(decimal amount, AccountType from);
     }

@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Collections;
 using Models;
 using CynicBank.Core.Implementations;
 using CynicBank.Persistence.Implementations;
 using CynicBank.Persistence.Interfaces;
+using CynicBank.Persistence;
 
 namespace CynicBanky
 {
     public partial class DepositMoney : Form
     {
-        private AccountType _depositTo;
+        private string _depositTo;
         private int _depositAmount;
+        private List<Account> UserAccounts;
+        
         public DepositMoney()
         {
             InitializeComponent();
@@ -25,19 +30,25 @@ namespace CynicBanky
         {
 
         }
-
+        /// <summary>
+        /// populates select acount combo with logged in user
+        /// Account Number
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DepositMoney_Load(object sender, EventArgs e)
         {
-            
+            UserAccounts = Session.GetLoggedInUserAccounts();
+
+            foreach (var item in UserAccounts)
+            {
+                selectAccount.Items.Add(item.AccountNumber);
+            }
         }
 
         private void selectAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _depositTo = 
-                selectAccount.SelectedItem.ToString() == 
-                "Current" ? 
-                AccountType.Current 
-                : AccountType.Savings;
+            _depositTo = selectAccount.SelectedItem.ToString();
         }
 
         private void depositAmountInput_TextChanged(object sender, EventArgs e)

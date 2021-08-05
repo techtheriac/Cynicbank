@@ -28,27 +28,34 @@ namespace CynicBank.Core.Implementations
             _TransactionManager = transactionManager;
         }
 
-        public string MakeDeposit(decimal amount, AccountType to)
+        public string MakeDeposit(decimal amount, string accountNumber)
         {
-            var accountId = Session.LoggedInUser.Email;
-            
-            // Query if account exist
-            // if not return error message; else
-            // retrieve account object
-            // Perform Credit action
-            // Update account
+            var userId = Session.LoggedInUser.Id;
 
-            // Generate Transaction and Update transaction table
-   
-            var generatedTransaction = new Transaction
+            List<Account> accounts = _AccountManager.RetrieveAccounts();
+
+            bool doesExist = accounts.Exists(x => x.UserId == userId && x.AccountNumber == accountNumber);
+
+            if(doesExist == false)
             {
-                Id = Session.LoggedInUser.Email,
-                Amount = amount,
-                Description = "Deposit by self",
-                TypeOfTransaction = TransactionType.Credit,
-            };
+                return "Transaction failed. No such account";
+            } 
+            else
+            {
+                _AccountManager.CreditAccount(accountNumber, amount);
 
-            return "Transaction Successful";
+                var generatedTransaction = new Transaction
+                {
+                    Amount = amount,
+                    Description = "Deposit by self",
+                    TypeOfTransaction = TransactionType.Credit,
+                    AccountNumber = accountNumber
+                };
+
+                var status = _TransactionManager.AddTransaction(generatedTransaction);
+
+                return (status == true ? "Transaction successful" : "Transaction failed");
+            }
         }
 
         public string SendMoney(decimal amount, AccountType from, string to)

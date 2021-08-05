@@ -12,7 +12,7 @@ namespace CynicBank.Persistence.Implementations
         private string ConnectionString { get; set; } = Session.ConnectionString;
         public bool AccountExist(Account model)
         {
-            return RetrieveAccounts().Exists(x => x.Id == model.Id || x.AccountNumber == model.AccountNumber);
+            return RetrieveAccounts().Exists(x => x.AccountType == model.AccountType && x.UserId == model.UserId);
         }
 
         public bool AddAccount(Account model)
@@ -90,9 +90,28 @@ namespace CynicBank.Persistence.Implementations
             }
         }
 
-        public bool UpdateAccount(Account model)
+        public bool CreditAccount(string accountNumber, decimal amount)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("spUpdateAccountBalanceCredit", connection))
+                {
+                    connection.Open();
+
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@AccountNumber", accountNumber);
+                    command.Parameters.AddWithValue("@Amount", amount);
+                 
+
+
+                    int RowsAffected = command.ExecuteNonQuery();
+                }
+
+            }
+
+            return true;
+
         }
 
         private AccountType CastEnum(string enumValue) =>
